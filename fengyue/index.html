@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风月无边是醉乡 - 古典诗词意境赏析与风月文化漫谈</title>
+<meta name="description" content="风月无边是醉乡，解读这句古典诗词中的意境与哲思，梳理风月意象的文化源流、醉乡主题的文学表达，以及相关诗词名句的赏析与阅读指引。">
+<meta name="keywords" content="风月无边是醉乡,风月无边,醉乡,古典诗词,风月意象,诗词赏析,醉乡文化">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+  :root{
+    --ink:#1c1a17;
+    --ink-soft:#4a453e;
+    --paper:#f6f1e7;
+    --paper-deep:#ece3d3;
+    --line:#d8cdb8;
+    --gold:#9c7b3f;
+    --gold-light:#c2a165;
+    --wine:#7a2e2e;
+    --wine-soft:#a4494a;
+    --jade:#3f6155;
+    --shadow:0 10px 30px rgba(60,45,20,.10);
+    --radius:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Songti SC","STSong","SimSun","Noto Serif SC",Georgia,serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+    font-size:16px;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(194,161,101,.10) 0, transparent 38%),
+      radial-gradient(circle at 88% 8%, rgba(122,46,46,.07) 0, transparent 34%);
+    background-attachment:fixed;
+  }
+  a{color:var(--wine);text-decoration:none;transition:color .25s;}
+  a:hover{color:var(--gold);}
+  img{max-width:100%;display:block;}
+
+  .wrap{width:min(1160px,92%);margin:0 auto;}
+
+  /* ---------- 页眉 ---------- */
+  .site-header{
+    border-bottom:1px solid var(--line);
+    background:rgba(246,241,231,.92);
+    backdrop-filter:blur(6px);
+    position:sticky;top:0;z-index:50;
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-seal{
+    width:46px;height:46px;flex:0 0 46px;
+    border:2px solid var(--wine);
+    border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--wine);
+    font-size:13px;line-height:1.05;letter-spacing:1px;
+    font-weight:700;
+    text-align:center;
+    background:rgba(122,46,46,.05);
+  }
+  .brand-text strong{
+    display:block;font-size:19px;letter-spacing:2px;color:var(--ink);
+  }
+  .brand-text span{
+    display:block;font-size:12px;color:var(--ink-soft);letter-spacing:3px;
+  }
+  .main-nav ul{list-style:none;display:flex;gap:26px;align-items:center;}
+  .main-nav a{
+    font-size:15px;color:var(--ink-soft);letter-spacing:1px;position:relative;padding:4px 0;
+  }
+  .main-nav a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--gold);transition:width .3s;
+  }
+  .main-nav a:hover::after{width:100%;}
+  .nav-toggle{
+    display:none;background:none;border:1px solid var(--line);
+    border-radius:6px;padding:6px 10px;font-size:18px;color:var(--ink-soft);cursor:pointer;
+  }
+
+  /* ---------- 首屏 ---------- */
+  .hero{
+    padding:64px 0 54px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;
+  }
+  .hero-tag{
+    display:inline-block;font-size:12px;letter-spacing:4px;color:var(--gold);
+    border:1px solid var(--gold-light);border-radius:999px;padding:4px 16px;margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(30px,4.4vw,50px);
+    line-height:1.35;
+    letter-spacing:4px;
+    font-weight:700;
+    margin-bottom:20px;
+  }
+  .hero h1 em{
+    font-style:normal;color:var(--wine);
+  }
+  .hero-lead{
+    font-size:17px;color:var(--ink-soft);max-width:640px;margin-bottom:28px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:11px 30px;border-radius:999px;
+    font-size:15px;letter-spacing:2px;transition:all .28s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--wine);color:#fdf8ef;}
+  .btn-primary:hover{background:var(--wine-soft);color:#fff;transform:translateY(-2px);}
+  .btn-ghost{border-color:var(--gold-light);color:var(--gold);}
+  .btn-ghost:hover{background:rgba(194,161,101,.14);color:var(--gold);}
+
+  .hero-scroll{
+    background:var(--paper-deep);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px 28px;
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .hero-scroll::before{
+    content:"詩";position:absolute;top:-16px;left:22px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--wine);color:#fdf8ef;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;letter-spacing:0;
+  }
+  .hero-scroll p{
+    font-size:16px;color:var(--ink-soft);letter-spacing:1px;
+  }
+  .hero-scroll p + p{margin-top:14px;}
+  .hero-scroll .verse{
+    font-size:18px;color:var(--wine);letter-spacing:3px;text-align:center;
+    padding:8px 0 14px;border-bottom:1px dashed var(--line);margin-bottom:16px;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  section{padding:66px 0;}
+  .sec-head{margin-bottom:38px;}
+  .sec-head .kicker{
+    font-size:12px;letter-spacing:5px;color:var(--gold);display:block;margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-size:clamp(23px,2.8vw,31px);letter-spacing:3px;font-weight:700;
+    display:inline-block;position:relative;padding-bottom:12px;
+  }
+  .sec-head h2::after{
+    content:"";position:absolute;left:0;bottom:0;width:56px;height:3px;
+    background:linear-gradient(90deg,var(--wine),var(--gold-light));border-radius:2px;
+  }
+  .sec-head p{margin-top:16px;color:var(--ink-soft);max-width:760px;font-size:16px;}
+
+  /* ---------- 释义卡 ---------- */
+  .meaning{
+    background:linear-gradient(180deg,rgba(236,227,211,.55),rgba(246,241,231,0));
+  }
+  .meaning-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .meaning-card{
+    background:#fdfaf3;border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;
+  }
+  .meaning-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(60,45,20,.14);}
+  .meaning-card .num{
+    font-size:13px;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block;
+  }
+  .meaning-card h3{font-size:19px;letter-spacing:2px;margin-bottom:12px;}
+  .meaning-card p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- 意象解析 ---------- */
+  .imagery-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:start;}
+  .imagery-list{list-style:none;}
+  .imagery-list li{
+    padding:20px 0;border-bottom:1px dashed var(--line);
+    display:flex;gap:18px;align-items:flex-start;
+  }
+  .imagery-list li:last-child{border-bottom:none;}
+  .imagery-list .mark{
+    flex:0 0 40px;height:40px;border-radius:8px;
+    background:rgba(122,46,46,.08);color:var(--wine);
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;letter-spacing:0;
+  }
+  .imagery-list h3{font-size:17px;letter-spacing:2px;margin-bottom:6px;}
+  .imagery-list p{font-size:15px;color:var(--ink-soft);}
+
+  .aside-box{
+    background:var(--jade);color:#eef3ef;
+    border-radius:var(--radius);padding:32px 30px;
+    box-shadow:var(--shadow);
+  }
+  .aside-box h3{
+    font-size:19px;letter-spacing:3px;margin-bottom:18px;color:#fff;
+    padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.22);
+  }
+  .aside-box ul{list-style:none;}
+  .aside-box li{
+    font-size:15px;padding:10px 0 10px 18px;position:relative;color:#dfe8e2;
+    border-bottom:1px dashed rgba(255,255,255,.14);
+  }
+  .aside-box li:last-child{border-bottom:none;}
+  .aside-box li::before{
+    content:"·";position:absolute;left:2px;top:8px;color:var(--gold-light);font-size:20px;
+  }
+  .aside-box .aside-note{
+    margin-top:20px;font-size:13px;color:#c3d2c9;line-height:1.8;
+  }
+
+  /* ---------- 名句长廊 ---------- */
+  .verses{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .verse-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .verse-card{
+    background:#fdfaf3;border-left:4px solid var(--gold-light);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:24px 26px;box-shadow:var(--shadow);
+  }
+  .verse-card .line{
+    font-size:18px;letter-spacing:2px;color:var(--wine);margin-bottom:10px;line-height:1.7;
+  }
+  .verse-card .src{font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:10px;}
+  .verse-card p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- 阅读路径 ---------- */
+  .path-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  .path-step{
+    background:#fdfaf3;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 22px;position:relative;
+  }
+  .path-step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    font-size:14px;letter-spacing:2px;color:var(--gold-light);
+    display:block;margin-bottom:14px;
+  }
+  .path-step h3{font-size:17px;letter-spacing:2px;margin-bottom:10px;}
+  .path-step p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* ---------- 常见问题 ---------- */
+  .faq{background:linear-gradient(180deg,rgba(236,227,211,.45),rgba(246,241,231,0));}
+  .faq-list{max-width:880px;}
+  .faq-item{
+    background:#fdfaf3;border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:14px;overflow:hidden;
+  }
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:20px 24px;font-size:16.5px;letter-spacing:1px;color:var(--ink);
+    font-family:inherit;display:flex;justify-content:space-between;gap:16px;align-items:center;
+  }
+  .faq-q .icon{
+    flex:0 0 20px;color:var(--gold);font-size:20px;transition:transform .3s;line-height:1;
+  }
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+    padding:0 24px;
+  }
+  .faq-item.open .faq-a{max-height:520px;padding-bottom:22px;}
+  .faq-a p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- 页脚 ---------- */
+  .site-footer{
+    background:#221f1b;color:#b8b0a3;padding:52px 0 26px;font-size:14.5px;
+  }
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .site-footer h3{
+    color:#f0e9dc;font-size:16px;letter-spacing:3px;margin-bottom:18px;font-weight:600;
+  }
+  .site-footer p{line-height:1.9;}
+  .site-footer ul{list-style:none;}
+  .site-footer li{margin-bottom:10px;}
+  .site-footer a{color:#b8b0a3;}
+  .site-footer a:hover{color:var(--gold-light);}
+  .footer-bottom{
+    margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:13px;color:#8d857a;
+  }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .meaning-grid{grid-template-columns:1fr 1fr;}
+    .imagery-grid{grid-template-columns:1fr;gap:32px;}
+    .verse-grid{grid-template-columns:1fr;}
+    .path-steps{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:30px;}
+  }
+  @media (max-width:720px){
+    body{font-size:15.5px;}
+    .header-inner{flex-wrap:wrap;}
+    .nav-toggle{display:block;}
+    .main-nav{
+      display:none;width:100%;border-top:1px solid var(--line);margin-top:12px;padding-top:12px;
+    }
+    .main-nav.open{display:block;}
+    .main-nav ul{flex-direction:column;gap:0;align-items:flex-start;}
+    .main-nav li{width:100%;}
+    .main-nav a{display:block;padding:11px 0;border-bottom:1px dashed var(--line);}
+    .hero{padding:44px 0 40px;}
+    section{padding:48px 0;}
+    .meaning-grid{grid-template-columns:1fr;}
+    .path-steps{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .hero-actions .btn{flex:1 1 auto;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-seal">醉<br>乡</div>
+      <div class="brand-text">
+        <strong>风月无边是醉乡</strong>
+        <span>诗词意境 · 风月文化</span>
+      </div>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#meaning">句意解读</a></li>
+        <li><a href="#imagery">意象源流</a></li>
+        <li><a href="#verses">名句长廊</a></li>
+        <li><a href="#path">阅读路径</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag">古典诗词意境</span>
+        <h1>风月无边，<em>是醉乡</em></h1>
+        <p class="hero-lead">
+          “风月无边是醉乡”把清风明月与酣醉之境合为一体：天地间的风月没有边际，人心安放之处便是醉乡。它常被用来形容一种超脱俗务、与自然同醉的心境，也常被引用为对闲适生活的诗意表达。本页从字面含义、意象源流、名句关联与阅读方法四个层面，帮你真正读懂这句话。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#meaning">开始解读</a>
+          <a class="btn btn-ghost" href="#verses">看相关名句</a>
+        </div>
+      </div>
+      <aside class="hero-scroll">
+        <p class="verse">风月无边，是醉乡</p>
+        <p>
+          这句话并非单指饮酒。在中国古典文学里，“醉”常是一种精神状态——放下执念、暂离尘嚣，让感官与自然重新接通。
+        </p>
+        <p>
+          风月是外部的辽阔，醉乡是内部的安顿。二者相合，说的其实是：当一个人真正与眼前的风景相融，不必饮酒，也已在醉乡之中。
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 句意解读 -->
+  <section class="meaning" id="meaning">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">句 意 解 读</span>
+        <h2>这句话在说什么</h2>
+        <p>理解这句表达，关键是分清三个层次：风月指向什么，醉乡指向什么，二者之间用什么逻辑连接。下面从三个角度拆解，避免只停留在“很美”的笼统感受上。</p>
+      </div>
+      <div class="meaning-grid">
+        <article class="meaning-card">
+          <span class="num">其 一</span>
+          <h3>风月：无边的自然</h3>
+          <p>“风月”在古典语境中泛指清风明月，也常代指山水景物与闲适时光。“无边”强调其辽阔无尽，暗示自然之美不设边界，也不向人索取任何条件。它不是某处特定的名胜，而是一种随时可遇的观看方式。</p>
+        </article>
+        <article class="meaning-card">
+          <span class="num">其 二</span>
+          <h3>醉乡：心境的安放</h3>
+          <p>“醉乡”原指酒醉后的境界，在文学中逐渐演变为一种精神归宿——忘忧、自适、不被外物牵动。它可以是微醺，也可以是清醒的沉浸。重点不在酒，而在于人是否找到了一处可以松弛下来的内在空间。</p>
+        </article>
+        <article class="meaning-card">
+          <span class="num">其 三</span>
+          <h3>是：一种等同</h3>
+          <p>“是”字把两者直接等同：风月无边之处，就是醉乡。这一判断跳过了饮酒的中间环节，等于说，只要心与景相契，自然本身就能让人沉醉。语气平静，却带有明确的立场。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 意象源流 -->
+  <section id="imagery">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">意 象 源 流</span>
+        <h2>风月与醉乡的文化脉络</h2>
+        <p>这两个词都不是孤立出现的。它们在中国文学史中各自有长期的积累，理解这层背景，才能读出这句话的分量。</p>
+      </div>
+      <div class="imagery-grid">
+        <ul class="imagery-list">
+          <li>
+            <span class="mark">风</span>
+            <div>
+              <h3>风月作为审美对象</h3>
+              <p>早在六朝诗文中，风月便已是文人笔下的常客。唐宋以后，“风月”逐渐脱离单纯写景，转而承载闲情、雅趣乃至对功名的疏离。它代表一种不依赖外物条件的审美自由。</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">醉</span>
+            <div>
+              <h3>醉乡作为精神隐喻</h3>
+              <p>自唐代起，“醉乡”被反复书写，从对饮酒状态的描摹，发展为对理想生活状态的想象。它往往与清醒时的束缚形成对照，是一种主动选择的暂时退出。</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">合</span>
+            <div>
+              <h3>二者合流的表达方式</h3>
+              <p>把自然景物直接等同于精神归宿，是古典文学中常见的写法。它用极简的判断句完成一次价值表态：不必向外求，眼前的风景已足够安顿人生。</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">今</span>
+            <div>
+              <h3>当代语境下的使用</h3>
+              <p>今天这句话常被用于书画题词、茶室雅集、园林命名与个人签名，表达对慢节奏生活的向往。使用时通常取其意境，而非考据某一具体出处。</p>
+            </div>
+          </li>
+        </ul>
+        <aside class="aside-box">
+          <h3>阅读提示</h3>
+          <ul>
+            <li>先分清“风月”是实景还是心境，理解会完全不同。</li>
+            <li>“醉”未必指酒，注意区分生理之醉与精神之醉。</li>
+            <li>判断句“是”带有主观立场，是理解语气的关键。</li>
+            <li>不必执着于单一出处，这类表达多经流传演化。</li>
+            <li>引用时宜留出语境，避免被误读为提倡饮酒。</li>
+          </ul>
+          <p class="aside-note">
+            说明：古典语句在流传过程中常出现异文与化用，本页所述为通行理解，具体出处请以权威文献为准。
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 名句长廊 -->
+  <section class="verses" id="verses">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">名 句 长 廊</span>
+        <h2>同一意境下的相关表达</h2>
+        <p>下面这些句子与“风月无边是醉乡”在意境上彼此呼应，可以帮助你建立更完整的理解坐标。每条均标注了大致的作者与篇名，便于进一步查证。</p>
+      </div>
+      <div class="verse-grid">
+        <article class="verse-card">
+          <p class="line">醉后不知天在水，满船清梦压星河。</p>
+          <p class="src">唐珙《题龙阳县青草湖》</p>
+          <p>写醉中分不清天与水，梦境与星河叠在一起。与“醉乡”相通之处在于：醉态下的感知边界被打开，现实与想象融为一体。</p>
+        </article>
+        <article class="verse-card">
+          <p class="line">我醉欲眠卿且去，明朝有意抱琴来。</p>
+          <p class="src">李白《山中与幽人对酌》</p>
+          <p>醉得坦然，也散得洒脱。这里的“醉”不是失态，而是一种不加修饰的自在，与“醉乡”所指向的精神松弛高度一致。</p>
+        </article>
+        <article class="verse-card">
+          <p class="line">清风明月本无价，近水远山皆有情。</p>
+          <p class="src">梁章钜集句，题苏州沧浪亭</p>
+          <p>直接点出风月不标价、山水自有情。与“风月无边”的意涵互为注脚，说明自然之美向所有人平等敞开。</p>
+        </article>
+        <article class="verse-card">
+          <p class="line">惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色。</p>
+          <p class="src">苏轼《前赤壁赋》</p>
+          <p>把风月写成取之不尽、用之不竭的公共资源。这段话常被用来解释“风月无边”背后的旷达心态。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读路径 -->
+  <section id="path">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">阅 读 路 径</span>
+        <h2>怎样系统地读懂这类句子</h2>
+        <p>如果只是记住一句漂亮的话，收获有限。按下面四步走，可以把单句理解扩展为对一类表达的整体把握。</p>
+      </div>
+      <div class="path-steps">
+        <article class="path-step">
+          <h3>拆词</h3>
+          <p>先把句子拆成最小的意义单元，逐词确认它在古典语境中的常见义项，避免用现代口语习惯直接套用。</p>
+        </article>
+        <article class="path-step">
+          <h3>找同类</h3>
+          <p>搜集使用同一意象的其他句子，比较它们在用法上的共性与差异，判断哪些是稳定含义，哪些是个别发挥。</p>
+        </article>
+        <article class="path-step">
+          <h3>还原语境</h3>
+          <p>了解作者所处时代与写作场合，判断这句话是写景、抒怀还是应酬之作，语气与用意往往随之不同。</p>
+        </article>
+        <article class="path-step">
+          <h3>落到当下</h3>
+          <p>思考这句话在今天可以怎样被使用——题字、命名、自勉还是引用，明确使用场景能反过来加深理解。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">常 见 问 题</span>
+        <h2>关于这句话的常见疑问</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">“风月无边是醉乡”出自哪首诗？<span class="icon">＋</span></button>
+          <div class="faq-a">
+            <p>这类表达在流传中常出现多种版本与化用，很难简单对应到某一首确定的诗作。它更像是一句被反复使用、逐渐定型的意境表达。若需引用到正式场合，建议先查证权威诗词总集或相关文献，确认具体出处后再标注作者与篇名，避免误引。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">这里的“醉”是不是在提倡饮酒？<span class="icon">＋</span></button>
+          <div class="faq-a">
+            <p>不是。在古典文学中，“醉”更多是一种精神状态，指放下计较、与自然相融的松弛感。它与是否饮酒没有必然关系。理解这句话时，重点应放在“心境的安顿”上，而不是字面的饮酒行为。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">“风月无边”和“风月”一词的常见用法有区别吗？<span class="icon">＋</span></button>
+          <div class="faq-a">
+            <p>“风月无边”强调自然景物的辽阔与不受限制，通常用于写景或表达旷达之情。而“风月”在某些语境中可能带有其他引申义，需要结合上下文判断。在“风月无边是醉乡”这一表达中，取的是前一种清朗、开阔的含义。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">这句话适合用在什么场合？<span class="icon">＋</span></button>
+          <div class="faq-a">
+            <p>常见于书画题词、茶室或园林的匾额命名、雅集主题、个人书斋名以及文艺类签名。使用时建议配合具体的场景说明，让读者明白取的是哪一层含义，效果会更自然。用于正式出版物时，仍需以查证后的出处为准。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">想进一步了解这类意境，应该读什么？<span class="icon">＋</span></button>
+          <div class="faq-a">
+            <p>可以从两条线入手：一是唐宋诗词中写风月、写醉态的篇目，二是历代笔记与文论中关于闲适、旷达的论述。先读作品，再读评注，理解会扎实得多。不必一开始就追求数量，把几篇读透比泛读更有效。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>风月无边是醉乡</h3>
+        <p>一个专注古典诗词意境解析的内容页面，围绕风月、醉乡、闲适与旷达等主题，提供句意拆解、意象源流与阅读路径，帮助读者把一句诗读得更透。</p>
+      </div>
+      <div>
+        <h3>页面导航</h3>
+        <ul>
+          <li><a href="#meaning">句意解读</a></li>
+          <li><a href="#imagery">意象源流</a></li>
+          <li><a href="#verses">名句长廊</a></li>
+          <li><a href="#path">阅读路径</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>阅读建议</h3>
+        <ul>
+          <li>先读作品，再读评注</li>
+          <li>注意异文与化用现象</li>
+          <li>引用前查证权威文献</li>
+          <li>理解语境重于记诵</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页内容为古典诗词意境的通行理解整理，具体出处请以权威文献为准。</span>
+      <span>风月无边 · 醉乡有意</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 移动端导航
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('open');
+    });
+    mainNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        mainNav.classList.remove('open');
+      }
+    });
+  }
+
+  // FAQ 折叠
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      faqItems.forEach(function (other) {
+        other.classList.remove('open');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+</script>
+
+</body>
+  </html>
