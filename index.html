@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>少司缘吧-角色讨论、同人创作与剧情交流社区</title>
+<meta name="description" content="少司缘吧是围绕角色少司缘展开的交流社区，提供角色介绍、剧情讨论、同人创作、画作分享、常见问题与参与指南，方便新老同好快速了解并加入讨论。">
+<meta name="keywords" content="少司缘吧,少司缘,角色讨论,同人创作,剧情交流,社区">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --ink:#241c2b;
+  --ink-soft:#5b5266;
+  --paper:#fbf7f2;
+  --paper-2:#f3ece3;
+  --line:#e3d9cc;
+  --plum:#8c3f63;
+  --plum-deep:#63264a;
+  --gold:#b98a3c;
+  --jade:#3f7a6b;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(70,40,60,.10);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--plum-deep);text-decoration:none;}
+a:hover{color:var(--plum);text-decoration:underline;}
+img{max-width:100%;}
+h1,h2,h3{line-height:1.35;margin:0 0 .6em;}
+.wrap{width:min(1160px,92%);margin:0 auto;}
+
+/* 顶部 */
+.topbar{
+  background:linear-gradient(120deg,#2c1c2c,#4a2439 55%,#6a3050);
+  color:#f7efe7;
+  border-bottom:3px solid var(--gold);
+}
+.topbar .wrap{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+  padding:12px 0;
+}
+.brand{
+  display:flex;align-items:center;gap:12px;
+  font-size:1.35rem;font-weight:700;letter-spacing:.04em;
+  color:#fff;text-decoration:none;
+}
+.brand:hover{text-decoration:none;color:#fff;}
+.brand .mark{
+  width:40px;height:40px;border-radius:12px;
+  background:radial-gradient(circle at 30% 25%,#e8c07a,#b4647f 60%,#6a3050);
+  display:grid;place-items:center;
+  font-size:1.05rem;font-weight:800;color:#2c1c2c;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.35);
+}
+.brand small{
+  display:block;font-size:.68rem;font-weight:400;letter-spacing:.22em;
+  color:#e2c9a8;text-transform:uppercase;
+}
+.topbar .tagline{
+  margin-left:auto;font-size:.86rem;color:#e6d6c4;
+}
+.topbar .tagline b{color:#f2d79f;}
+
+/* 导航 */
+.mainnav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(251,247,242,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.mainnav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:4px;
+}
+.mainnav a{
+  display:block;padding:13px 15px;
+  font-size:.94rem;color:var(--ink-soft);
+  border-bottom:3px solid transparent;
+}
+.mainnav a:hover{
+  color:var(--plum-deep);text-decoration:none;
+  border-bottom-color:var(--gold);
+  background:rgba(185,138,60,.08);
+}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(900px 320px at 85% -10%,rgba(185,138,60,.22),transparent 70%),
+    radial-gradient(700px 300px at 5% 110%,rgba(63,122,107,.16),transparent 70%),
+    var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:52px 0 44px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:38px;align-items:start;
+}
+.hero h1{
+  font-size:clamp(1.7rem,3.4vw,2.5rem);
+  color:var(--plum-deep);
+  letter-spacing:.01em;
+}
+.hero h1 span{
+  display:inline-block;
+  border-bottom:4px solid var(--gold);
+  padding-bottom:2px;
+}
+.hero p.lead{
+  font-size:1.04rem;color:var(--ink-soft);max-width:56ch;margin:0 0 22px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:999px;
+  font-size:.94rem;font-weight:600;border:1px solid transparent;
+  transition:.2s;
+}
+.btn-primary{background:var(--plum-deep);color:#fff;}
+.btn-primary:hover{background:var(--plum);color:#fff;text-decoration:none;}
+.btn-ghost{border-color:var(--plum-deep);color:var(--plum-deep);}
+.btn-ghost:hover{background:rgba(140,63,99,.08);text-decoration:none;}
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 18px;box-shadow:var(--shadow);
+}
+.hero-card h2{
+  font-size:1rem;color:var(--plum-deep);margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.hero-card h2::before{
+  content:"";width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+}
+.hero-card ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.92rem;}
+.hero-card li{margin-bottom:7px;}
+.hero-card li:last-child{margin-bottom:0;}
+
+/* 通用区块 */
+section{padding:52px 0;}
+section.alt{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-head{margin-bottom:26px;}
+.sec-head h2{
+  font-size:clamp(1.28rem,2.3vw,1.62rem);color:var(--plum-deep);
+  display:inline-block;
+}
+.sec-head .sub{
+  color:var(--ink-soft);font-size:.94rem;margin:6px 0 0;max-width:70ch;
+}
+.sec-head .rule{
+  width:64px;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),var(--plum));
+  margin-top:12px;
+}
+
+/* 卡片网格 */
+.grid{display:grid;gap:20px;}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:0 4px 14px rgba(70,40,60,.05);
+  transition:.22s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.card h3{
+  font-size:1.06rem;color:var(--plum-deep);margin-bottom:8px;
+  display:flex;align-items:center;gap:9px;
+}
+.card h3 .dot{
+  width:26px;height:26px;flex:0 0 26px;border-radius:8px;
+  display:grid;place-items:center;font-size:.82rem;
+  background:rgba(140,63,99,.10);color:var(--plum-deep);
+}
+.card p{margin:0;color:var(--ink-soft);font-size:.93rem;}
+.card .meta{
+  margin-top:12px;font-size:.8rem;color:#9a8f9f;
+  border-top:1px dashed var(--line);padding-top:10px;
+}
+
+/* 讨论列表 */
+.thread-list{list-style:none;margin:0;padding:0;}
+.thread-list li{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:16px 4px;border-bottom:1px dashed var(--line);
+}
+.thread-list li:last-child{border-bottom:0;}
+.thread-avatar{
+  width:42px;height:42px;flex:0 0 42px;border-radius:12px;
+  background:linear-gradient(135deg,#e8d3c2,#c99bab);
+  display:grid;place-items:center;font-weight:700;color:#5a2a42;
+  font-size:.9rem;
+}
+.thread-body h3{font-size:1rem;margin-bottom:4px;}
+.thread-body p{margin:0;font-size:.9rem;color:var(--ink-soft);}
+.thread-tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px;}
+.tag{
+  font-size:.76rem;padding:2px 10px;border-radius:999px;
+  background:rgba(63,122,107,.12);color:var(--jade);
+}
+.tag.gold{background:rgba(185,138,60,.16);color:#8a6318;}
+.tag.plum{background:rgba(140,63,99,.12);color:var(--plum-deep);}
+
+/* 侧栏 + 主体双栏 */
+.two-col{display:grid;grid-template-columns:1.6fr 1fr;gap:34px;align-items:start;}
+.side-box{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;margin-bottom:20px;
+}
+.side-box h3{
+  font-size:1rem;color:var(--plum-deep);margin-bottom:12px;
+  padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.side-box ol,.side-box ul{margin:0;padding-left:20px;font-size:.92rem;color:var(--ink-soft);}
+.side-box li{margin-bottom:8px;}
+.side-box li:last-child{margin-bottom:0;}
+.rank-num{
+  display:inline-block;width:20px;height:20px;line-height:20px;
+  text-align:center;border-radius:6px;font-size:.76rem;font-weight:700;
+  background:var(--plum-deep);color:#fff;margin-right:6px;
+}
+.rank-num.n2{background:var(--plum);}
+.rank-num.n3{background:var(--gold);}
+.rank-num.nx{background:#cbbfae;color:#4a3f4f;}
+
+/* 指南步骤 */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0;}
+.steps li{
+  counter-increment:step;position:relative;
+  padding:0 0 22px 56px;
+  border-left:2px solid var(--line);
+  margin-left:18px;
+}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+.steps li::before{
+  content:counter(step);
+  position:absolute;left:-19px;top:0;
+  width:36px;height:36px;border-radius:50%;
+  background:#fff;border:2px solid var(--plum);
+  color:var(--plum-deep);font-weight:700;
+  display:grid;place-items:center;font-size:.9rem;
+}
+.steps h3{font-size:1rem;margin-bottom:6px;color:var(--plum-deep);}
+.steps p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+
+/* FAQ */
+.faq-item{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 22px;margin-bottom:14px;
+}
+.faq-item h3{
+  font-size:1rem;color:var(--plum-deep);margin:0 0 8px;
+}
+.faq-item h3::before{
+  content:"问";display:inline-grid;place-items:center;
+  width:22px;height:22px;border-radius:6px;margin-right:9px;
+  font-size:.74rem;background:var(--plum-deep);color:#fff;
+  vertical-align:2px;
+}
+.faq-item p{margin:0;font-size:.93rem;color:var(--ink-soft);}
+
+/* 提示条 */
+.notice{
+  background:rgba(185,138,60,.10);
+  border-left:4px solid var(--gold);
+  border-radius:0 10px 10px 0;
+  padding:16px 20px;font-size:.92rem;color:#6a4f22;
+}
+.notice strong{color:#8a6318;}
+
+/* 页脚 */
+footer{
+  background:#2c1c2c;color:#cbbfae;
+  padding:44px 0 26px;margin-top:0;
+  border-top:4px solid var(--gold);
+}
+.foot-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;
+}
+footer h3{
+  font-size:.95rem;color:#f2d79f;margin-bottom:12px;letter-spacing:.05em;
+}
+footer p{font-size:.88rem;margin:0 0 10px;color:#b3a6a0;}
+footer ul{list-style:none;margin:0;padding:0;font-size:.88rem;}
+footer li{margin-bottom:8px;}
+footer a{color:#d9cbbd;}
+footer a:hover{color:#f2d79f;}
+.foot-bottom{
+  margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);
+  font-size:.82rem;color:#9a8d92;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15px;}
+  section{padding:38px 0;}
+  .hero{padding:38px 0 32px;}
+  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .topbar .tagline{margin-left:0;width:100%;}
+  .mainnav a{padding:11px 11px;font-size:.88rem;}
+  .foot-grid{grid-template-columns:1fr;gap:22px;}
+  .thread-list li{gap:12px;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="mark">缘</span>
+      <span>少司缘吧
+        <small>Character&nbsp;Community</small>
+      </span>
+    </a>
+    <p class="tagline">围绕角色 <b>少司缘</b> 的讨论 · 同人 · 资料整理站</p>
+  </div>
+</header>
+
+<nav class="mainnav" aria-label="主导航">
+  <div class="wrap">
+    <ul>
+      <li><a href="#intro">角色概览</a></li>
+      <li><a href="#topics">热门讨论</a></li>
+      <li><a href="#creation">同人创作</a></li>
+      <li><a href="#guide">参与指南</a></li>
+      <li><a href="#rules">社区规范</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>少司缘吧 · <span>角色讨论与同人交流聚集地</span></h1>
+        <p class="lead">
+          如果你正在搜索“少司缘吧”，通常是想找一个能集中聊角色、看同人、翻设定、找同好的地方。
+          本站把与“少司缘”相关的角色信息梳理、剧情观点交流、绘画与文字创作分享、参与方式说明整理在一起，
+          让新来的人能快速看懂，也让老同好有地方继续讨论。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#topics">进入热门讨论</a>
+          <a class="btn btn-ghost" href="#guide">查看参与指南</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>新同好先看这几条</h2>
+        <ul>
+          <li>角色相关内容来源不同，设定细节可能存在差异，讨论时以出处为准。</li>
+          <li>发帖前先搜索是否已有同类话题，避免重复开帖。</li>
+          <li>同人作品请注明是否原创、是否允许转载与二次使用。</li>
+          <li>涉及剧透的内容，建议在标题或开头标注“含剧透”。</li>
+          <li>观点不同可以讨论，但请针对内容本身，不针对人。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 角色概览 -->
+  <section id="intro">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>角色概览：先弄清楚大家在聊什么</h2>
+        <p class="sub">
+          由于“少司缘”在不同作品、不同版本中的呈现可能并不完全一致，
+          本栏目只做讨论方向的梳理，不替代官方设定，具体信息请以你实际接触的作品原文为准。
+        </p>
+        <div class="rule"></div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3><span class="dot">名</span>名称与称呼</h3>
+          <p>
+            “少司缘”这一称呼带有明显的古风与司职色彩，围绕它的讨论常从名字的含义、
+            称呼的由来以及同好之间常用的简称展开。不同圈子里对同一角色的叫法可能不同，
+            交流时说明自己指的是哪个版本，能省掉很多误会。
+          </p>
+          <div class="meta">讨论方向：称呼由来 · 常用简称 · 版本差异</div>
+        </article>
+        <article class="card">
+          <h3><span class="dot">设</span>形象与设定</h3>
+          <p>
+            形象气质、服饰风格、身份背景是角色讨论中最容易被反复提及的部分。
+            这类内容往往需要配图或引用原文才说得清楚，因此本吧鼓励在发帖时附上来源，
+            方便他人核对与补充。
+          </p>
+          <div class="meta">讨论方向：外观特征 · 身份背景 · 能力与关系</div>
+        </article>
+        <article class="card">
+          <h3><span class="dot">情</span>剧情与关系</h3>
+          <p>
+            角色在故事中的选择、与其他角色的关系走向，是长篇讨论的主要来源。
+            这类话题很容易涉及剧透，建议在标题中标注，让还没看到对应进度的人自行决定是否点开。
+          </p>
+          <div class="meta">讨论方向：剧情节点 · 人物关系 · 结局解读</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门讨论 + 侧栏 -->
+  <section class="alt" id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>热门讨论：最近大家在聊什么</h2>
+        <p class="sub">
+          以下为社区内容类型的示例结构，用于说明各类话题的组织方式。
+          实际发帖时，请按照你掌握的资料与真实观点展开，不必套用示例措辞。
+        </p>
+        <div class="rule"></div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <ul class="thread-list">
+            <li>
+              <div class="thread-avatar">缘</div>
+              <div class="thread-body">
+                <h3><a href="#topics">从称呼入手：为什么“少司缘”这个名字读起来很有故事感</a></h3>
+                <p>从字面拆解与语境联想两个角度，聊聊这个名字给人的第一印象，以及它如何影响读者对角色的预期。</p>
+                <div class="thread-tags">
+                  <span class="tag plum">角色讨论</span>
+                  <span class="tag">设定考据</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thread-avatar">画</div>
+              <div class="thread-body">
+                <h3><a href="#creation">同人绘画交流：如何把握角色的气质而不只是外形</a></h3>
+                <p>外形容易临摹，气质最难还原。几位画手分享了从配色、姿态到眼神处理的思路，欢迎补充你的方法。</p>
+                <div class="thread-tags">
+                  <span class="tag gold">同人创作</span>
+                  <span class="tag">绘画</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thread-avatar">文</div>
+              <div class="thread-body">
+                <h3><a href="#creation">短篇同人写作：怎样在有限篇幅里立住一个人物</a></h3>
+                <p>围绕短篇结构、细节取舍与对话节奏展开的写作经验帖，适合刚尝试写同人的朋友参考。</p>
+                <div class="thread-tags">
+                  <span class="tag gold">同人创作</span>
+                  <span class="tag">写作</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thread-avatar">剧</div>
+              <div class="thread-body">
+                <h3><a href="#topics">含剧透｜关于角色选择动机的几种解读，你更认同哪一种</a></h3>
+                <p>同一段剧情，不同读者读出的动机可能完全不同。本帖汇总了几种常见解读，并说明各自的依据。</p>
+                <div class="thread-tags">
+                  <span class="tag plum">剧情交流</span>
+                  <span class="tag">含剧透</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thread-avatar">新</div>
+              <div class="thread-body">
+                <h3><a href="#guide">新人报到帖：说说你是从哪个渠道认识这个角色的</a></h3>
+                <p>了解渠道不同，关注点往往也不同。欢迎新朋友简单介绍自己，方便大家找到聊得来的同好。</p>
+                <div class="thread-tags">
+                  <span class="tag">新人报到</span>
+                  <span class="tag">交流</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thread-avatar">整</div>
+              <div class="thread-body">
+                <h3><a href="#topics">资料整理帖：把散落各处的设定信息归到一起</a></h3>
+                <p>整理类帖子最需要耐心与出处标注。本帖说明如何分类、如何注明来源，方便后来者查阅。</p>
+                <div class="thread-tags">
+                  <span class="tag">资料整理</span>
+                  <span class="tag plum">考据</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <aside>
+          <div class="side-box">
+            <h3>本周讨论热度参考</h3>
+            <ol>
+              <li><span class="rank-num">1</span>角色气质与外形的关系</li>
+              <li><span class="rank-num n2">2</span>剧情节点的不同解读</li>
+              <li><span class="rank-num n3">3</span>同人绘画配色思路</li>
+              <li><span class="rank-num nx">4</span>短篇同人写作技巧</li>
+              <li><span class="rank-num nx">5</span>新人入坑顺序建议</li>
+            </ol>
+          </div>
+          <div class="side-box">
+            <h3>常见标签</h3>
+            <div class="thread-tags">
+              <span class="tag plum">角色讨论</span>
+              <span class="tag gold">同人创作</span>
+              <span class="tag">剧情交流</span>
+              <span class="tag">设定考据</span>
+              <span class="tag">资料整理</span>
+              <span class="tag">新人报到</span>
+              <span class="tag gold">绘画</span>
+              <span class="tag">写作</span>
+            </div>
+          </div>
+          <div class="side-box">
+            <h3>发帖小提示</h3>
+            <p style="font-size:.9rem;color:var(--ink-soft);margin:0;">
+              标题写清楚主题，正文说明你的观点或问题，能显著提高被回复的概率。
+              纯水帖、无信息量的重复帖容易被忽略。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 同人创作 -->
+  <section id="creation">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>同人创作：绘画、文字与周边分享</h2>
+        <p class="sub">
+          同人创作是角色社区最有生命力的部分。无论你是画手、写手还是单纯喜欢看，
+          都可以在这里找到对应的分区与交流方式。
+        </p>
+        <div class="rule"></div>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3><span class="dot">画</span>绘画与设计</h3>
+          <p>
+            包括角色插画、表情包、服装设计、配色练习等。发布时建议注明使用的工具、
+            是否参考了他人作品，以及是否允许转载。临摹作品请标明原作出处。
+          </p>
+          <div class="meta">建议标注：工具 · 参考来源 · 转载许可</div>
+        </article>
+        <article class="card">
+          <h3><span class="dot">文</span>文字与短篇</h3>
+          <p>
+            包括短篇同人、角色分析、剧情补完与日常向小品。长篇建议分章发布，
+            并在首帖附上目录与更新说明，方便读者追更。
+          </p>
+          <div class="meta">建议标注：篇幅 · 是否完结 · 是否含剧透</div>
+        </article>
+        <article class="card">
+          <h3><span class="dot">物</span>周边与二创实物</h3>
+          <p>
+            手工、徽章、立牌、贴纸等实物类二创的展示与经验交流。
+            涉及购买与交易的内容请谨慎对待，注意甄别信息，避免私下转账风险。
+          </p>
+          <div class="meta">提醒：交易需谨慎 · 保护个人信息</div>
+        </article>
+      </div>
+      <div style="margin-top:24px" class="notice">
+        <strong>关于版权：</strong>
+        同人创作建立在原作之上，请尊重原作者与官方权益。不要将他人作品署名为己有，
+        也不要在未获授权的情况下用于商业用途。转载、搬运前先取得作者同意，是最基本的礼貌。
+      </div>
+    </div>
+  </section>
+
+  <!-- 参与指南 -->
+  <section class="alt" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>参与指南：第一次来，怎么开始</h2>
+        <p class="sub">
+          不用急着发帖。先看、再问、后参与，是最不容易踩坑的顺序。
+          下面五步适合完全没有社区经验的新朋友。
+        </p>
+        <div class="rule"></div>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>先浏览，建立基本印象</h3>
+          <p>花十几分钟翻一翻角色概览和热门讨论，了解大家常用的称呼、讨论范围和语气，能避免很多低级误会。</p>
+        </li>
+        <li>
+          <h3>确认自己想聊的方向</h3>
+          <p>是喜欢角色本身、关注剧情走向，还是更想参与创作？方向不同，适合去的分区也不同，先想清楚再发帖效率更高。</p>
+        </li>
+        <li>
+          <h3>搜索是否已有同类话题</h3>
+          <p>同一个问题被反复提问，容易让老成员失去回复热情。先搜索，若已有讨论，可在原帖下补充你的看法。</p>
+        </li>
+        <li>
+          <h3>发帖时说清楚背景</h3>
+          <p>注明你参考的版本、进度和出处，能让讨论更聚焦。涉及剧透的内容，请在标题或开头明确标注。</p>
+        </li>
+        <li>
+          <h3>保持交流的基本礼貌</h3>
+          <p>观点分歧很正常。反驳观点而不是攻击发言者，是长期待在社区里的基本素养，也能让讨论走得更远。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 社区规范 -->
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>社区规范：让讨论能持续下去</h2>
+        <p class="sub">
+          规则不是为了限制表达，而是为了让不同偏好的人都能舒服地待在这里。
+          以下几条是社区运转的基本共识。
+        </p>
+        <div class="rule"></div>
+      </div>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3><span class="dot">1</span>尊重不同偏好与解读</h3>
+          <p>
+            喜欢同一个角色的人，关注点可能完全不同。有人重剧情，有人重形象，有人只想看同人。
+            不因偏好不同而贬低他人，是讨论能继续的前提。
+          </p>
+        </article>
+        <article class="card">
+          <h3><span class="dot">2</span>剧透务必标注</h3>
+          <p>
+            剧情类讨论请在标题或正文开头注明“含剧透”及大致进度范围，
+            让尚未看到该部分的人可以自行回避。
+          </p>
+        </article>
+        <article class="card">
+          <h3><span class="dot">3</span>注明出处，不传播未证实信息</h3>
+          <p>
+            设定、截图、翻译等内容尽量附上来源。对无法确认的说法，使用“据说”“可能”等表述，
+            避免把猜测当成事实传播。
+          </p>
+        </article>
+        <article class="card">
+          <h3><span class="dot">4</span>不发布违规与侵权内容</h3>
+          <p>
+            禁止发布违法信息、恶意链接、诱导下载内容，以及未经授权搬运的他人作品。
+            发现此类内容可向管理人员反馈。
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常见问题</h2>
+        <p class="sub">整理了一些新朋友最常提出的疑问，先看这里往往能省下不少时间。</p>
+        <div class="rule"></div>
+      </div>
+
+      <div class="faq-item">
+        <h3>“少司缘吧”具体是做什么的？</h3>
+        <p>
+          它是围绕角色“少司缘”形成的交流空间，内容通常包括角色讨论、剧情分析、
+          同人绘画与写作分享、资料整理以及新人交流。不同平台的“吧”在功能与规则上会有差异，
+          具体以你所在平台的说明为准。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>完全不了解这个角色，可以加入吗？</h3>
+        <p>
+          可以。多数社区对新人都比较友好，建议先浏览角色概览类内容建立基本印象，
+          再选择感兴趣的话题参与。提问时说明自己的了解程度，更容易得到有针对性的回答。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>我想发自己的同人作品，需要注意什么？</h3>
+        <p>
+          建议注明是否为原创、使用的工具或参考资料、是否允许转载，以及是否包含剧透。
+          如果是临摹或二改他人作品，请标明原作者与出处，并在获得许可后再发布。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>看到与自己理解完全不同的解读，怎么办？</h3>
+        <p>
+          先确认双方参考的版本与进度是否一致，很多分歧其实来自信息差。
+          如果确实观点不同，可以说明自己的依据，理性讨论；无法达成一致时，保留各自看法即可。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>社区里提到的设定信息都准确吗？</h3>
+        <p>
+          不一定。社区内容由成员自发整理，可能存在遗漏、误记或版本差异。
+          重要信息建议回到原作或官方渠道核对，社区讨论更适合作为理解与交流的参考。
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>遇到不友善的发言或侵权内容怎么办？</h3>
+        <p>
+          不建议直接对线升级冲突。可以保留截图证据，通过平台提供的举报或反馈渠道处理，
+          由管理人员依据规则判断。保护好自己的账号与个人信息同样重要。
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>少司缘吧</h3>
+        <p>
+          一个围绕角色“少司缘”展开的讨论与创作交流站点，
+          内容以角色讨论、剧情交流、同人分享和资料整理为主。
+        </p>
+        <p>本站为爱好者交流性质，相关角色与作品权利归其权利人所有。</p>
+      </div>
+      <div>
+        <h3>内容分区</h3>
+        <ul>
+          <li><a href="#intro">角色概览</a></li>
+          <li><a href="#topics">热门讨论</a></li>
+          <li><a href="#creation">同人创作</a></li>
+          <li><a href="#rules">社区规范</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>新手帮助</h3>
+        <ul>
+          <li><a href="#guide">参与指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#topics">发帖建议</a></li>
+          <li><a href="#creation">创作标注说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>交流提醒</h3>
+        <ul>
+          <li>标注剧透，尊重他人进度</li>
+          <li>注明出处，不传未证实信息</li>
+          <li>尊重原创，转载先获授权</li>
+          <li>理性讨论，对事不对人</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>少司缘吧 · 角色讨论与同人交流</span>
+      <span>内容由社区成员共同维护，请以官方信息为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.mainnav a[href^="#"]');
+  links.forEach(function(link){
+    link.addEventListener('click', function(){
+      links.forEach(function(l){ l.style.borderBottomColor = 'transparent'; });
+      link.style.borderBottomColor = '#b98a3c';
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
